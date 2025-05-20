@@ -1,6 +1,11 @@
 #include <iostream>
 #include <conio.h>
+#include <cstdlib>
 using namespace std;
+
+const int MAX = 100;
+int angka[MAX];
+int jumlahData = 0;
 
 
 void dMenu(){
@@ -15,15 +20,31 @@ cout<<"Masukan angka :";
 
 }
 
-void mPertama(string pesan){
-system("cls");
-cout<<"hallo saya menu "<<pesan;
-getch();
+void menuInputData() {
+    system("cls");
+    cout << "Masukkan jumlah data (maksimal " << MAX << "): ";
+    cin >> jumlahData;
+
+    if (cin.fail() || jumlahData < 1 || jumlahData > MAX) {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Input tidak valid.\n";
+        jumlahData = 0;
+    } else {
+        for (int i = 0; i < jumlahData; i++) {
+            cout << "Angka ke-" << (i + 1) << ": ";
+            cin >> angka[i];
+        }
+        cout << "Data berhasil disimpan.\n";
+    }
+
+    cout << "Tekan sembarang tombol untuk kembali ke menu...";
+    getch();
 }
 
 void sepatahKata(){
   system("cls");
-  cout<<"Indonesia Bisa, Kita Juara\n @Poliban";
+  cout<<"Indonesia Bisa, Kita Juara\n@Poliban";
   getch();
 }
 int main() {
@@ -36,18 +57,18 @@ do
   {
    case '1':
     /* code */
-    mPertama("pertama");
+    menuInputData();
     break;
    case '2':
-    mPertama("ke- dua");
+    ("ke- dua");
     /* code */ 
     break;  
    case '3':
-    mPertama("ke- tiga");
+    ("ke- tiga");
     /* code */
     break;  
    case '4':
-   sepatahKata();
+    sepatahKata();
     /* code */
     break;  
   case '5':
