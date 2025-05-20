@@ -54,6 +54,33 @@ void menuTampilData() {
     cout << "Tekan sembarang tombol untuk kembali ke menu...";
     getch();
 }
+void menuSorting() {
+    system("cls");
+    if (jumlahData == 0) {
+        cout << "Belum ada data untuk disorting.\n";
+    } else {
+        // Insertion Sort
+        for (int i = 1; i < jumlahData; i++) {
+            int key = angka[i];
+            int j = i - 1;
+            while (j >= 0 && angka[j] > key) {
+                angka[j + 1] = angka[j];
+                j--;
+            }
+            angka[j + 1] = key;
+        }
+
+        cout << "Data setelah disorting (ascending):\n";
+        for (int i = 0; i < jumlahData; i++) {
+            cout << angka[i] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "Tekan sembarang tombol untuk kembali ke menu...";
+    getch();
+}
+
 
 void sepatahKata(){
   system("cls");
@@ -77,7 +104,7 @@ do
     /* code */ 
     break;  
    case '3':
-    ("ke- tiga");
+    menuSorting();
     /* code */
     break;  
    case '4':
