@@ -41,6 +41,19 @@ void menuInputData() {
     cout << "Tekan sembarang tombol untuk kembali ke menu...";
     getch();
 }
+void menuTampilData() {
+    system("cls");
+    if (jumlahData == 0) {
+        cout << "Belum ada data yang dimasukkan.\n";
+    } else {
+        cout << "Data yang dimasukkan:\n";
+        for (int i = 0; i < jumlahData; i++) {
+            cout << "Data[" << i + 1 << "] = " << angka[i] << endl;
+        }
+    }
+    cout << "Tekan sembarang tombol untuk kembali ke menu...";
+    getch();
+}
 
 void sepatahKata(){
   system("cls");
@@ -60,7 +73,7 @@ do
     menuInputData();
     break;
    case '2':
-    ("ke- dua");
+    menuTampilData();
     /* code */ 
     break;  
    case '3':
